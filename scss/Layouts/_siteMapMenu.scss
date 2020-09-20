@@ -1,0 +1,27 @@
+.siteMapMenu {
+    margin-top: $mg-1 * 3;
+    .line-through {
+        display: inline-block;
+        background-color: $color-gray-5;
+        height: 1px;
+        width: 111%;
+        margin: $mg-2 + $mg-1 0;
+    }
+    ul {
+        a {
+            @include styleText($color-gray-1, $fs-4, $fw-normal);
+            line-height: 22px;
+            transition: all .5s;
+            &:hover{
+                @include styleTextHover($color-blue-2);
+            }
+        }
+    }
+}
+@include responsiveMin("extra-large") {
+    .siteMapMenu {
+        .container {
+            max-width: 1280px;
+        }
+    }
+}

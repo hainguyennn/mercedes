@@ -1,0 +1,24 @@
+.relatedWebsiteList {
+    padding: $pd-2 * 3 0;
+    border-top: 1px solid $color-black-6;
+    .brand-logo__website {
+        img {
+            height: 2em;
+            width: 100%;
+        }
+    }
+}
+@include responsiveMin("extra-large") {
+    .relatedWebsiteList {
+        max-width: 1255px;
+        margin: 0 auto;
+    }
+}
+@include responsiveMax("small") {
+    .relatedWebsiteList {
+        padding: $pd-2 + $pd-1 0;
+        .brand-logo__website {
+            margin-bottom: $mg-2;
+        }
+    }
+}

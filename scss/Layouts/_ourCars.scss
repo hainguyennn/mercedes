@@ -1,0 +1,297 @@
+.ourCars {
+    .nav-tabs {
+        margin: 0 auto;
+        border-bottom: none;
+        display: flex;
+        justify-content: center;
+        .nav-item {
+            margin: 0 $mg-1 - 3;
+            .nav-link {
+                border: none;
+                @include styleText($color-white-0, $fs-4, $fw-normal);
+                transition: all 0.5s;
+                &.active {
+                    background-color: $color-trans;
+                    @include styleText($color-blue-1, $fs-4, $fw-normal);
+                    border-bottom: 1px solid $color-blue-1;
+                }
+                &:hover {
+                    @include styleTextHover($color-blue-1);
+                }
+                i {
+                    margin-right: $mg-1;
+                }
+            }
+        }
+    }
+    #myTabContent {
+        margin-top: $mg-2 + $mg-1;
+        .new-Cars,
+        .popular-Cars,
+        .video-cars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            .cars__item {
+                position: relative;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    max-height: 100%;
+                    display: block;
+                }
+                &.car1 {
+                    grid-column: 1 / 3;
+                    grid-row: 1 / 3;
+                }
+                .information-Cars {
+                    position: absolute;
+                    left: 0;
+                    bottom: -80px;
+                    background-color: rgba(0, 0, 0, 0.35);
+                    width: 100%;
+                    overflow: hidden;
+                    padding: $pd-1 + 3 $pd-2 + 11;
+                    height: 130px;
+                    h3 {
+                        @include styleText($color-white-0, $fs-2 + 1, $fw-400);
+                        line-height: 24px;
+                        margin: 0;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                    p {
+                        margin: 0;
+                        @include styleText($color-white-0, $fs-4, $fw-normal);
+                        line-height: 18px;
+                        margin-top: $mg-0;
+                        opacity: 0;
+                        transition: all 0.5s ease-out;
+                    }
+                    transition: all 0.5s;
+                }
+                .car-details {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    padding-left: $pd-2 + $pd-1 + 2;
+                    @include styleText($color-white-0, $fs-1 - 1, $fw-normal);
+                    padding-bottom: $pd-0 - 2;
+                    p {
+                        margin: 0;
+                    }
+                    i {
+                        margin-right: $mg-1;
+                        &:nth-child(2) {
+                            margin-left: $mg-1;
+                        }
+                    }
+                }
+                .time-video {
+                    position: absolute;
+                    left: 0;
+                    bottom: 56px;
+                    p {
+                        margin: 0;
+                        .time {
+                            @include styleText($color-white-0, $fs-0 - 3, $fw-normal);
+                            padding: $pd-0 + 2 $pd-2;
+                            background-color: $color-black-6;
+                            padding-top: $pd-0;
+                        }
+                        .icon-play {
+                            @include styleText($color-black-0, $fs-1 - 5, $fw-bold);
+                            padding: $pd-0 + 3 $pd-1 + 3;
+                            background-color: $color-white-0;
+                        }
+                    }
+                    transition: all 0.5s;
+                }
+                &:hover {
+                    .time-video {
+                        opacity: 0;
+                    }
+                }
+                &:hover {
+                    .information-Cars {
+                        background-color: rgba(0, 0, 0, 0.644);
+                        transform: translateY(-70px);
+                        p {
+                            opacity: 1;
+                        }
+                    }
+                }
+                &:hover {
+                    .car-details {
+                        opacity: 0;
+                    }
+                }
+                &.car10 {
+                    grid-column: 1 / 3;
+                    grid-row: 5 / 7;
+                }
+                &.car2,
+                &.car9,
+                &.car24 {
+                    .information-Cars {
+                        padding-top: $pd-0;
+                        h3 {
+                            @include styleText($color-white-0, $fs-0 + 3, $fw-normal);
+                        }
+                    }
+                }
+                &.car3,
+                &.car2,
+                &.car4,
+                &.car6,
+                &.car7,
+                &.car8,
+                &.car9,
+                &.car11,
+                &.car12,
+                &.car13,
+                &.car14,
+                &.car15,
+                &.car16,
+                &.car17,
+                &.car18,
+                &.car21,
+                &.car22,
+                &.car23,
+                &.car24,
+                &.car25,
+                &.car26,
+                &.car27,
+                &.car28,
+                &.car29,
+                &.car30,
+                &.car31,
+                &.car32 {
+                    @extend .car2;
+                }
+                &.car8,
+                &.car20,
+                &.popular-car6,
+                &.popular-car14,
+                &#video-car2,
+                &.video-car3 {
+                    @extend .car2;
+                    .information-Cars {
+                        padding-top: 0;
+                        h3 {
+                            @include styleText($color-white-0, $fs-0 + 2, $fw-normal);
+                        }
+                    }
+                }
+                &#video-car2 {
+                    h3 {
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+                &.car27,
+                &.car2,
+                &.car3,
+                &.car4,
+                &.car6,
+                &.car13,
+                &.car20 {
+                    img {
+                        height: 100%;
+                    }
+                }
+                &:hover {
+                    h3 {
+                        white-space: normal !important;
+                    }
+                }
+                &.car19 {
+                    grid-row: 2 / 4;
+                    grid-column: 1 / 3;
+                }
+                &.car28 {
+                    grid-column: 1 / 3;
+                    grid-row: 6 / 8;
+                }
+            }
+        }
+        #moreNewCars,
+        #morePopularCars,
+        #moreVideoCars {
+            .showMoreCarsItem {
+                @extend .new-Cars;
+            }
+        }
+        .btnShowMoreCars {
+            padding-top: $pd-2 * 2;
+            .btnShowMore {
+                background: linear-gradient($color-black-6, $color-black-10);
+                outline: none;
+                border: none;
+                cursor: pointer;
+                padding: $pd-1 $pd-2;
+                @include styleText($color-gray-1, $fs-0, $fw-normal);
+                transition: all 0.5s;
+                &:hover {
+                    @include styleTextHover($color-white-0);
+                }
+            }
+        }
+    }
+}
+@include responsiveMax("extra-large-1200px") {
+    .new-Cars,
+    .popular-Cars,
+    .video-cars {
+        grid-template-columns: repeat(2, 1fr) !important;
+        .cars__item{
+            &.car1,&.car19,&.car28{
+                grid-column: unset !important;
+                grid-row: unset !important;
+            }
+        }
+    }
+}
+@include responsiveMax("small") {
+    #myTabContent {
+        .new-Cars,
+        .popular-Cars,
+        .video-cars {
+            display: block !important;
+            width: 100%;
+            .cars__item {
+                margin-bottom: $mg-2 + $mg-1 !important;
+                &:hover {
+                    .information-Cars {
+                        transform: translate(0) !important;
+                    }
+                    .car-details,
+                    .time-video {
+                        opacity: 1 !important;
+                    }
+                }
+                .information-Cars {
+                    position: unset !important;
+                    height: auto !important;
+                    p {
+                        opacity: 1 !important;
+                        margin-bottom: $mg-1 * 2 !important;
+                    }
+                    h3 {
+                        text-overflow: unset !important;
+                        white-space: unset !important;
+                        overflow: unset !important;
+                    }
+                }
+                .time-video {
+                    bottom: 106px !important;
+                }
+            }
+        }
+        .btnShowMoreCars {
+            width: 50% !important;
+        }
+    }
+}

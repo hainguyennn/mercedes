@@ -1,0 +1,62 @@
+.carousel {
+    padding-top: 50px;
+    .carousel-caption {
+        text-align: left;
+        top: 36%;
+        left: 50%;
+        transform: translate(-96%, -50%);
+        width: 44%;
+        .styleAnimation {
+            animation-delay: 0.5s;
+            h1 {
+                @include styleText($color-white-0, $fs-5, $fw-400);
+                margin-bottom: $mg-2;
+                line-height: 4.28571rem;
+            }
+            a {
+                @include styleText($color-gray-4, $fs-0 + 1, $fw-normal);
+                padding: $pd-0 + 2 $pd-2;
+                background-color: $color-black-6;
+                border: 1px solid $color-black-7;
+                &:hover {
+                    @include styleTextHover($color-white-0);
+                    background-color: $color-black-7;
+                }
+                animation-delay: 1.3s;
+            }
+        }
+    }
+    .subTitle {
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        width: 100%;
+        transform: translateX(-42%);
+        p{
+            @include styleText($color-white-0,$fs-4,$fw-normal);
+            line-height: 30px;
+            animation-delay: 1.5s;
+        }
+    }
+    .car3{
+        p{
+            @include styleText($color-black-6,$fs-4,$fw-normal);
+            line-height: 20px;
+        }
+    }
+}
+@include responsiveMax('large-1130px'){
+    .styleAnimation{
+        h1{
+            font-size: 2.28571rem !important;
+            line-height: 2.85714rem !important;
+        }
+    }
+}
+@include responsiveMax('large'){
+    .styleAnimation{
+        h1{
+            @include styleText($color-white-0,$fs-3 !important,$fw-bold);
+        }
+    }
+}

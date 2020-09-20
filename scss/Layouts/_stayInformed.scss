@@ -1,0 +1,142 @@
+.stayInformed {
+    margin-bottom: $mg-2;
+    h3 {
+        @include styleText($color-white-0, $fs-3 + 4, $fw-normal);
+        padding-bottom: $pd-2 + $pd-2;
+        border-bottom: 1px solid $color-black-6;
+        margin-bottom: $mg-2;
+    }
+    .container {
+        .form__Register {
+            width: 41.66667%;
+            .register {
+                p {
+                    @include styleText($color-gray-1, $fs-1, $fw-normal);
+                    margin-bottom: $mg-2 + 5;
+                }
+                label {
+                    @include styleText($color-gray-1, $fs-1, $fw-normal);
+                    cursor: pointer;
+                    a {
+                        @include styleText($color-white-0, $fs-1, $fw-normal);
+                        &:hover {
+                            @include styleTextHover($color-blue-1);
+                        }
+                    }
+                }
+                .form-control {
+                    padding: $pd-0 - 2 1rem;
+                    @include styleText($color-white-0, $fs-2, $fw-normal);
+                    background-color: $color-black-8;
+                    border: 1px solid $color-black-8;
+                    border-radius: 0;
+                    &::placeholder {
+                        @include styleText($color-white-0, $fs-2, $fw-normal);
+                        font-style: italic;
+                    }
+                    &:focus {
+                        box-shadow: none;
+                        border: 1px solid $color-gray-5;
+                        transition: none;
+                        background-color: $color-black-8;
+                    }
+                    &:focus + .input-group-append {
+                        .input-group-text {
+                            background-color: $color-gray-3;
+                            border: 1px solid $color-black-9;
+                            border-top: 1px solid $color-black-6;
+                        }
+                    }
+                }
+                .input-group-append {
+                    &:hover {
+                        .input-group-text {
+                            @include styleTextHover($color-blue-1);
+                            cursor: pointer;
+                            i {
+                                @include styleTextHover($color-gray-1);
+                            }
+                        }
+                    }
+                    .input-group-text {
+                        border-radius: 0;
+                        background: linear-gradient($color-black-6, $color-black-10);
+                        @include styleText($color-gray-1, $fs-1, $fw-normal);
+                        // padding: 1px 1.43rem 1px 1.43rem;
+                        border: 1px solid $color-black-9;
+                        border-top: 1px solid $color-black-6;
+                        padding: $pd-0 + 1 $pd-2;
+                        width: 169px;
+                        i {
+                            padding-right: $pd-1;
+                            @include styleText($color-gray-1, $fs-0 + 2, $fw-bold);
+                        }
+                    }
+                }
+                input[type="checkbox"] {
+                    display: none;
+                    & + label::before {
+                        content: "\2714";
+                        border: 1px solid $color-gray-1;
+                        display: inline-block;
+                        width: 18px;
+                        height: 18px;
+                        padding-left: 3px;
+                        background-color: $color-black-8;
+                        border-color: $color-black-8;
+                        color: $color-trans;
+                        margin-right: $mg-1;
+                        cursor: pointer;
+                    }
+                    &:checked + label::before {
+                        color: $color-white-0;
+                        border-color: $color-black-8;
+                        box-shadow: 0 0 6px 1px $color-white-0;
+                    }
+                }
+            }
+        }
+        .social-Media__list {
+            margin-left: $mg-2 * 3 + $mg-2 - 5;
+            .social-Media {
+                p {
+                    @include styleText($color-gray-1, $fs-1, $fw-normal);
+                    line-height: 25px;
+                }
+                .social-Media__icon {
+                    margin-left: -$mg-2 - 3;
+                    height: 100px;
+                    li {
+                        float: left;
+                        margin: $mg-1 + 5 $mg-2 + 5;
+                        i {
+                            @include styleText($color-gray-1, $fs-2, $fw-bold);
+                            transition: all 0.3s;
+                            &:hover {
+                                @include styleTextHover($color-blue-1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsiveMin("extra-large") {
+    .stayInformed {
+        .container {
+            max-width: 1286px;
+        }
+    }
+}
+@include responsiveMin("extra-large-1200px") {
+    .form__Register {
+        max-width: 41.66667% !important;
+    }
+}
+@include responsiveMax("extra-large-1200px") {
+    .social-Media__list {
+        margin-left: 0 !important;
+        margin-top: $mg-2;
+    }
+}

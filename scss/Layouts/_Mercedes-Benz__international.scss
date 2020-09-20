@@ -1,0 +1,57 @@
+.Mercedes-Benz__international {
+    padding: $pd-0 * 20 0;
+    .about__Mercedes-Benz {
+        max-width: 66.66667%;
+        h2 {
+            @include styleText($color-white-0, $fs-3, $fw-400);
+            margin-bottom: 1rem;
+        }
+        .Mercedes-Benz__international__more-info {
+            p {
+                @include styleText($color-white-0, $fs-1, $fw-normal);
+                line-height: 27px;
+            }
+            a{
+                color: $color-blue-2;
+                &:hover{
+                    text-decoration: underline !important;
+                }
+            }
+        }
+    }
+    .local-website__btn {
+        padding-top: $pd-2;
+        .btn-primary {
+            background-color: $color-blue-1;
+            border-color: $color-blue-1;
+            padding: $pd-0 $pd-1 + 2 $pd-0 + 1;
+            color: $color-white-0;
+            border-radius: $border-radius - 1;
+            &:hover {
+                background-color: $color-blue-2;
+                border-color: $color-blue-2;
+            }
+        }
+    }
+}
+@include responsiveMin('extra-large'){
+    .Mercedes-Benz__international{
+        width: 1280px;
+    }
+}
+@include responsiveMax('large-1030px'){
+    .about__Mercedes-Benz{
+        max-width: 100% !important;
+    }
+}
+@include responsiveMax('medium'){
+    .container{
+        max-width: 720px;
+        .local-website__btn{
+            a{
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}

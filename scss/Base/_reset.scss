@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    background-color: $color-black-0;
+    color: $color-white-0;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1rem;
+    line-height: unset;
+    font-weight: $fw-400;
+    &.noscroll{
+        overflow: hidden;
+    }
+    overflow-x: hidden !important;
+}
+a {
+    text-decoration: none !important;
+}
+ul {
+    list-style: none;
+}
+.navbar-toggler {
+    border-color: $color-trans !important;
+    &:focus {
+        outline: none;
+    }
+}
+.navbar-toggler-icon {
+    background-image: none !important;
+    line-height: 30px;
+    i {
+        @include styleText($color-white-0, $fs-2 + 2, $fw-bold);
+    }
+}

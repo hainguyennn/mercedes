@@ -1,0 +1,170 @@
+header {
+    z-index: 998 !important;
+    height: 108px;
+    background-color: $color-black-0;
+    transition: top 0.7s;
+    .privacy {
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            li {
+                display: inline-block;
+                margin: 0 $mg-1;
+                padding: $pd-0 0;
+                &:last-child {
+                    margin-left: $mg-2 + 15;
+                }
+                a {
+                    @include styleText($color-white-0, $fs-0 + 1, $fw-normal);
+                    &:hover {
+                        @include styleTextHover($color-blue-2);
+                    }
+                }
+            }
+        }
+    }
+    .navbar {
+        .menu-search {
+            // i {
+            //     &:hover {
+            //         @include styleTextHover($color-blue-1);
+            //         cursor: pointer;
+            //     }
+            // }
+            .navbar-toggler{
+                transition: all .5s;
+                &.open{
+                    .navbar-toggler-icon{
+                        transform: translateX(-10px);
+                        background-color: $color-trans;
+                    }
+                    .navbar-toggler-icon{
+                        &::before{
+                            transform: rotate(45deg) translate(0px,-1px);
+                        }
+                        &::after{
+                            transform: rotate(-45deg) translate(1px,0px);
+                        }
+                    }
+                }
+                .navbar-toggler-icon {
+                    width: 20px;
+                    height: 3px;
+                    background-color: $color-white-0;
+                    position: relative;
+                    border-radius: 3px;
+                    transition: all .5s;
+                    &::before,&::after {
+                        content: '';
+                        width: 20px;
+                        height: 3px;
+                        background-color: $color-white-0;
+                        position: absolute;
+                        border-radius: 3px;
+                        transition: all .5s;
+                    }
+                    &::before{
+                        transform: translate(-10px,6px);
+                    }
+                    &::after{
+                        transform: translate(-10px,-6px);
+                    }
+                }
+            }
+        }
+        .navbar-logo {
+            position: relative;
+            .sublogo {
+                position: absolute;
+                left: 135px;
+                top: -15px;
+            }
+            .logo {
+                position: absolute;
+                top: -50px;
+                left: 7px;
+            }
+        }
+        .navbar-collapse {
+            background-color: $color-black-0;
+            color: $color-white-0;
+        }
+        .navbar-nav {
+            padding-top: $pd-1 + 5;
+            .nav-item {
+                margin: 0 $mg-1 + 2;
+                .nav-link {
+                    @include styleText($color-white-0, $fs-0 + 1, $fw-normal);
+                    &:hover {
+                        @include styleTextHover($color-blue-2);
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsiveMin("extra-large") {
+    .menubar {
+        width: 1280px;
+        margin: 0 auto;
+    }
+}
+@include responsiveMax("large-1130px") {
+    .navbar {
+        .navbar-nav {
+            .nav-item {
+                &:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+@include responsiveMin("large") {
+    .menu-search {
+        display: none;
+    }
+    .nav-item {
+        .search {
+            display: none;
+        }
+        margin: 0 $mg-1 - 5 !important;
+    }
+}
+@include responsiveMax("large") {
+    .navbar-collapse {
+        .navbar-nav {
+            .nav-item {
+                padding: 0 $pd-2;
+                line-height: 46px;
+                .nav-link {
+                    @include styleText($color-white-0, $fs-3 !important, $fw-bold);
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+@include responsiveMax("medium") {
+    header {
+        .privacy {
+            .privacy__hidden-res {
+                display: none;
+            }
+        }
+        .navbar {
+            .navbar-logo {
+                .logo {
+                    width: 44px;
+                    height: 44px;
+                    top: -30px;
+                    left: 20px;
+                }
+                .sublogo {
+                    left: 100px;
+                    top: -20px;
+                }
+            }
+        }
+    }
+}

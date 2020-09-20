@@ -1,0 +1,203 @@
+.carousel-control-prev {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: calc(50% - 12px) !important;
+    left: 3%;
+}
+.carousel-control-next {
+    @extend .carousel-control-prev;
+    left: unset;
+    right: 3%;
+}
+.subMenu {
+    position: fixed;
+    top: 50%;
+    left: 108%;
+    transform: translate(-51%, -50%);
+    z-index: 999;
+    transition: all 0.7s;
+    ul {
+        list-style: none;
+        display: inline-block;
+        li {
+            margin-bottom: $mg-0;
+            width: 300px;
+            background-color: red;
+            padding-left: $pd-1 + 2;
+            background-color: $color-black-6;
+            transition: ease 0.5s;
+            cursor: pointer;
+            a {
+                @include styleText($color-white-0, $fs-0 + 1, $fw-normal);
+            }
+            &:hover {
+                transform: translateX(-77%);
+            }
+            .share {
+                display: flex;
+                transition: ease 0.5s;
+                li {
+                    width: 100%;
+                    padding-left: 0;
+                    &:nth-child(1) {
+                        &:hover {
+                            i {
+                                @include styleTextHover($color-white-0);
+                            }
+                        }
+                    }
+                    &:hover {
+                        transform: translateX(0);
+                        i {
+                            @include styleTextHover($color-blue-2);
+                        }
+                    }
+                }
+            }
+        }
+        i {
+            @include styleText($color-white-0, $fs-2 + 2, $fw-bold);
+            height: 44px;
+            line-height: 44px;
+            padding-right: $pd-1;
+        }
+    }
+    &.hide-SubMenu {
+        opacity: 0;
+    }
+}
+.modal-dialog {
+    max-width: 90% !important;
+    width: 892px !important;
+    .modal-header {
+        border-bottom: none;
+    }
+    .modal-body {
+        padding: 1rem $pd-2 * 2;
+        .nav-tabs {
+            height: 35px;
+            .nav-item {
+                margin-left: 0 !important;
+                .nav-link {
+                    border-radius: 0;
+                    @include styleText($color-black-6, $fs-4, $fw-normal);
+                    &:hover {
+                        border: 1px solid $color-trans;
+                    }
+                    &.active {
+                        border: 1px solid $color-gray-2;
+                        border-bottom: 1px solid $color-white-0;
+                        color: $color-blue-1;
+                    }
+                }
+            }
+        }
+        .tab-pane {
+            p {
+                @include styleText($color-black-6, $fs-4, $fw-normal);
+                line-height: 25px;
+                &:first-child {
+                    margin: $mg-2 + $mg-2 0;
+                }
+                a {
+                    &:hover {
+                        @include styleTextHover($color-blue-1);
+                        text-decoration: underline !important;
+                    }
+                }
+            }
+            h3 {
+                @include styleText($color-black-6, $fs-2 - 1, $fw-400);
+                &:first-child {
+                    margin-top: $mg-2 + $mg-2;
+                }
+            }
+        }
+        #privacy-Statement {
+            .num__items {
+                margin-right: $mg-2 + 5;
+            }
+            .CH__items {
+                margin-right: $mg-1 + 5;
+            }
+        }
+    }
+}
+@include responsiveMin("medium") {
+    .subMenu {
+        top: 35%;
+        left: 100%;
+        transform: unset;
+        transform: translate(-44px);
+        .share {
+            li {
+                .sharing-name-res {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+@include responsiveMax("medium") {
+    .subMenu {
+        left: unset;
+        top: unset;
+        transform: unset;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: $color-black-0;
+        ul {
+            margin-bottom: 0;
+            display: flex;
+            li {
+                max-width: 25%;
+                margin: 0 $mg-0 - 1;
+                height: 60px;
+                text-align: center;
+                padding: 0;
+                i,
+                span {
+                    width: 100%;
+                    height: 30px;
+                    padding: 0;
+                }
+                span {
+                    @include styleText($color-white-0, $fs-1, $fw-normal);
+                }
+                &:hover {
+                    transform: translateX(0);
+                }
+                .share {
+                    li {
+                        &:first-child {
+                            max-width: 100%;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+            .icon-contact {
+                display: none;
+            }
+        }
+    }
+    .modal-body {
+        .nav-tabs {
+            height: auto !important;
+            border-bottom: none;
+            .nav-item {
+                margin: $mg-1 0;
+                width: 100% !important;
+                border-bottom: 1px solid $color-gray-2;
+                .nav-link {
+                    padding-left: 0;
+                    &.active {
+                        border: 1px solid $color-trans !important;
+                    }
+                }
+            }
+        }
+    }
+}

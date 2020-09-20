@@ -1,0 +1,30 @@
+.ourUSWebsite {
+    .ourUSWebsite__content {
+        padding: $pd-2 * 2 0;
+        border-top: 1px solid $color-black-6;
+        p {
+            @include styleText($color-gray-1, $fs-4, $fw-normal);
+            a {
+                color: $color-white-0;
+                &:hover {
+                    @include styleTextHover($color-blue-1);
+                }
+            }
+        }
+    }
+}
+@include responsiveMin("extra-large") {
+    .ourUSWebsite {
+        .container {
+            max-width: 1286px;
+        }
+    }
+}
+@include responsiveMax("small"){
+    .ourUSWebsite{
+        .ourUSWebsite__content{
+            padding: $pd-2 0;
+        }
+        
+    }
+}

@@ -1,0 +1,46 @@
+.searching {
+    background-color: $color-black-1;
+    .input-group {
+        padding: $pd-2 + $pd-1 0;
+        .form-control {
+            padding: 0.355rem 1rem 0.215rem 1rem;
+            background-color: $color-gray-3;
+            font-size: $fs-1;
+            border-radius: 0;
+            border: 1px solid $color-gray-3;
+            @include styleText($color-black-6, 1.285rem, $fw-normal);
+            &:focus {
+                box-shadow: none;
+                border-top: 1px solid $color-gray-3;
+                border-left: 1px solid $color-gray-3;
+                border-bottom: 1px solid $color-gray-3;
+                border-right: transparent;
+                transition: none;
+                background-color: $color-gray-3;
+            }
+            &:focus + .input-group-append {
+                .input-group-text {
+                    border-top: 1px solid $color-gray-3;
+                    border-right: 1px solid $color-gray-3;
+                    border-bottom: 1px solid $color-gray-3;
+                    background-color: $color-gray-3;
+                }
+            }
+        }
+        .input-group-append {
+            .input-group-text {
+                border: 1px solid $color-gray-3;
+                background-color: $color-gray-3;
+                color: $color-black-6;
+                padding: 1px 1.43rem 1px 1.43rem;
+            }
+        }
+    }
+}
+@include responsiveMin('extra-large'){
+    .searching{
+        .form__searching{
+            max-width: 1180px;
+        }
+    }
+}
